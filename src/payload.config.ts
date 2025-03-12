@@ -10,6 +10,7 @@ import sharp from 'sharp'
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
 import { opsCounterPlugin } from './plugins/opsCounter'
+// import { mongooseAdapter } from '@payloadcms/db-mongodb'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -188,6 +189,9 @@ export default buildConfig({
       url: process.env.DATABASE_URI || '',
     },
   }),
+  // db: mongooseAdapter({
+  //   url: process.env.MONGODB_URI!
+  // }),
   sharp,
   plugins: [
     payloadCloudPlugin(),

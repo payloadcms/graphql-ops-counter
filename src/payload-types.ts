@@ -105,7 +105,7 @@ export interface Config {
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
   };
   db: {
-    defaultIDType: number;
+    defaultIDType: string;
   };
   globals: {};
   globalsSelect: {};
@@ -141,7 +141,7 @@ export interface UserAuthOperations {
  * via the `definition` "users".
  */
 export interface User {
-  id: number;
+  id: string;
   updatedAt: string;
   createdAt: string;
   email: string;
@@ -158,7 +158,7 @@ export interface User {
  * via the `definition` "media".
  */
 export interface Media {
-  id: number;
+  id: string;
   alt: string;
   updatedAt: string;
   createdAt: string;
@@ -177,10 +177,10 @@ export interface Media {
  * via the `definition` "posts".
  */
 export interface Post {
-  id: number;
+  id: string;
   title?: string | null;
   slug?: string | null;
-  writtenBy?: (number | null) | User;
+  writtenBy?: (string | null) | User;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -190,10 +190,10 @@ export interface Post {
  * via the `definition` "posts-2".
  */
 export interface Posts2 {
-  id: number;
+  id: string;
   title?: string | null;
   slug?: string | null;
-  writtenBy?: (number | null) | User;
+  writtenBy?: (string | null) | User;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -203,10 +203,10 @@ export interface Posts2 {
  * via the `definition` "posts-3".
  */
 export interface Posts3 {
-  id: number;
+  id: string;
   title?: string | null;
   slug?: string | null;
-  writtenBy?: (number | null) | User;
+  writtenBy?: (string | null) | User;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -216,10 +216,10 @@ export interface Posts3 {
  * via the `definition` "posts-4".
  */
 export interface Posts4 {
-  id: number;
+  id: string;
   title?: string | null;
   slug?: string | null;
-  writtenBy?: (number | null) | User;
+  writtenBy?: (string | null) | User;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -229,10 +229,10 @@ export interface Posts4 {
  * via the `definition` "posts-5".
  */
 export interface Posts5 {
-  id: number;
+  id: string;
   title?: string | null;
   slug?: string | null;
-  writtenBy?: (number | null) | User;
+  writtenBy?: (string | null) | User;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -242,10 +242,10 @@ export interface Posts5 {
  * via the `definition` "posts-6".
  */
 export interface Posts6 {
-  id: number;
+  id: string;
   title?: string | null;
   slug?: string | null;
-  writtenBy?: (number | null) | User;
+  writtenBy?: (string | null) | User;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -255,10 +255,10 @@ export interface Posts6 {
  * via the `definition` "posts-7".
  */
 export interface Posts7 {
-  id: number;
+  id: string;
   title?: string | null;
   slug?: string | null;
-  writtenBy?: (number | null) | User;
+  writtenBy?: (string | null) | User;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -268,10 +268,10 @@ export interface Posts7 {
  * via the `definition` "posts-8".
  */
 export interface Posts8 {
-  id: number;
+  id: string;
   title?: string | null;
   slug?: string | null;
-  writtenBy?: (number | null) | User;
+  writtenBy?: (string | null) | User;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -281,10 +281,10 @@ export interface Posts8 {
  * via the `definition` "posts-9".
  */
 export interface Posts9 {
-  id: number;
+  id: string;
   title?: string | null;
   slug?: string | null;
-  writtenBy?: (number | null) | User;
+  writtenBy?: (string | null) | User;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -294,10 +294,10 @@ export interface Posts9 {
  * via the `definition` "posts-10".
  */
 export interface Posts10 {
-  id: number;
+  id: string;
   title?: string | null;
   slug?: string | null;
-  writtenBy?: (number | null) | User;
+  writtenBy?: (string | null) | User;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -307,10 +307,10 @@ export interface Posts10 {
  * via the `definition` "posts-11".
  */
 export interface Posts11 {
-  id: number;
+  id: string;
   title?: string | null;
   slug?: string | null;
-  writtenBy?: (number | null) | User;
+  writtenBy?: (string | null) | User;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -320,10 +320,10 @@ export interface Posts11 {
  * via the `definition` "posts-12".
  */
 export interface Posts12 {
-  id: number;
+  id: string;
   title?: string | null;
   slug?: string | null;
-  writtenBy?: (number | null) | User;
+  writtenBy?: (string | null) | User;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -333,68 +333,68 @@ export interface Posts12 {
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
-  id: number;
+  id: string;
   document?:
     | ({
         relationTo: 'users';
-        value: number | User;
+        value: string | User;
       } | null)
     | ({
         relationTo: 'media';
-        value: number | Media;
+        value: string | Media;
       } | null)
     | ({
         relationTo: 'posts';
-        value: number | Post;
+        value: string | Post;
       } | null)
     | ({
         relationTo: 'posts-2';
-        value: number | Posts2;
+        value: string | Posts2;
       } | null)
     | ({
         relationTo: 'posts-3';
-        value: number | Posts3;
+        value: string | Posts3;
       } | null)
     | ({
         relationTo: 'posts-4';
-        value: number | Posts4;
+        value: string | Posts4;
       } | null)
     | ({
         relationTo: 'posts-5';
-        value: number | Posts5;
+        value: string | Posts5;
       } | null)
     | ({
         relationTo: 'posts-6';
-        value: number | Posts6;
+        value: string | Posts6;
       } | null)
     | ({
         relationTo: 'posts-7';
-        value: number | Posts7;
+        value: string | Posts7;
       } | null)
     | ({
         relationTo: 'posts-8';
-        value: number | Posts8;
+        value: string | Posts8;
       } | null)
     | ({
         relationTo: 'posts-9';
-        value: number | Posts9;
+        value: string | Posts9;
       } | null)
     | ({
         relationTo: 'posts-10';
-        value: number | Posts10;
+        value: string | Posts10;
       } | null)
     | ({
         relationTo: 'posts-11';
-        value: number | Posts11;
+        value: string | Posts11;
       } | null)
     | ({
         relationTo: 'posts-12';
-        value: number | Posts12;
+        value: string | Posts12;
       } | null);
   globalSlug?: string | null;
   user: {
     relationTo: 'users';
-    value: number | User;
+    value: string | User;
   };
   updatedAt: string;
   createdAt: string;
@@ -404,10 +404,10 @@ export interface PayloadLockedDocument {
  * via the `definition` "payload-preferences".
  */
 export interface PayloadPreference {
-  id: number;
+  id: string;
   user: {
     relationTo: 'users';
-    value: number | User;
+    value: string | User;
   };
   key?: string | null;
   value?:
@@ -427,7 +427,7 @@ export interface PayloadPreference {
  * via the `definition` "payload-migrations".
  */
 export interface PayloadMigration {
-  id: number;
+  id: string;
   name?: string | null;
   batch?: number | null;
   updatedAt: string;
